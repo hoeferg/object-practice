@@ -1,35 +1,41 @@
-let music = {
-    woodwind: "sax",
-    brass: "tuba",
-    string: "bass",
-    percussion: "xylophone"
-}
+// let music = {
+//     woodwind: "sax",
+//     brass: "tuba",
+//     string: "bass",
+//     percussion: "xylophone"
+// }
 
-let notes = ["whole", "half", "quarter", "eighth"]
-let musicArr = [ "woodwind", "sax", "brass", "tuba",]
-//-------------------------------------Objects-------------------------------------------------
+// let notes = ["whole", "half", "quarter", "eighth"]
+// let musicArr = [ "woodwind", "sax", "brass", "tuba",]
+// -------------------------------------Objects-------------------------------------------------
 //TODO: Object methods, Array Methods, Turn the second half of the object into an array.
+//-------------------------------------------------
+// for (const key in music) {
+//     music[key] = music[key] + 1
+//     console.log(`${music[key]}`)
 
-for (const key in music) {
-    music[key] = music[key] + 1
-    console.log(`${music[key]}`)
+//     // const objToArr = Object.entries(music[key]);
+//     // console.log(objToArr);
+// }
 
-    // const objToArr = Object.entries(music[key]);
-    // console.log(objToArr);
-}
-
+//-------------------------------------------------
 //Object values to array
-// array = Object.values(music)
+// const objToArr = Object.entries(music[key]);)
 // console.log(array);
 
+//--------------------------------------------------
 //Object to Array
 // const objToArr = Object.entries(music);
 // console.log(objToArr);
 
+
+//-------------------------------------------------
 // const arr =[music]
 // console.log(arr)
+
+
+//----------------------------------------------------
 // let emptyArrKey = [];
-// let emptyArrValue = [];
 
 // for (const key in music) {
 //     emptyArrKey.push(key);
@@ -40,10 +46,27 @@ for (const key in music) {
 //     }
 // }
 // console.log(music)
+
+//--------------------------------------------------
+// let music = { 1: 1}; 
+
+// const notes = ["C", "D", "E"];
+// const musicArr = ["Piano", "Guitar", "Flute"];
+
+// for (let i = 0; i < notes.length; i++) {
+//     const note = notes[i];
+//     const instrument = musicArr[i];
+//     music[note] = instrument;
+// }
+
+// console.log(music);
+//--------------------------------------------------
+
 //This add to the object
 
+// let emptyArrValue = [];
 
-// console.log(emptyArrKey);
+
 // for (const values in music) {
 //     emptyArrValue.push(values)
 // }
@@ -51,11 +74,11 @@ for (const key in music) {
 
 
 
-// //Object to String
+//Object to String
 // const objToStr = JSON.stringify(music);
 // console.log(objToStr);
 
-// //for loop through Object
+//for loop through Object
 // for (const key in music) {
 //     console.log(key)
 // }
@@ -136,7 +159,7 @@ for (const key in music) {
 
 //go through other object methods
 // ------------------------------------------------array------------------------------------------
-// //array to object
+//array to object
 // let notesObj = {notes} 
 // console.log(notesObj);
 //         //this returns { notes: [ 'whole', 'half', 'quarter', 'eighth' ] }
@@ -203,3 +226,84 @@ for (const key in music) {
 //Array.slice shows a portion of an array from start to end
 //Array.splice removes or replaces an existing element
 //Array.unshift array instances adds the specified element to the front
+
+//Problem 1: There is a band of musicians separated by type (woodwinds, string, percussions) and we want to see what instruments are in the band wihtout all this needless informormation 
+
+// let band = [
+//     { woodwinds: "1", Missy: "Flute"},
+//     { Horns: "2", Harold: "Tuba", Kumar: "Tuba"},
+//     { Strings: "3", Toacin: "Viola", Gayle: "Viola", Brandon: "Bass"},
+//     { Percussion: "4", Mark: "Timponi", Alberto: "Bongo", Jacob: "Snare Drum", David: "Drums"}
+// ];
+
+// for loop through array to target the object
+// then for loop through object and find the value, skipping the first value
+// push that value to a new object
+// let result = {};
+
+//     for (let i = 0; i < band.length; i++){
+//         const currentObj = band[i]
+
+//         for (const key in currentObj) {
+//             if (key !== Object.keys(currentObj)[0]) {
+//                 const value = currentObj[key];
+//                 result[key] = value;
+//             }
+//         }
+//     }
+//     console.log(result)
+// This returned {
+//   Missy: 'Flute',
+//   Harold: 'Tuba',
+//   Kumar: 'Tuba',
+//   Toacin: 'Viola',
+//   Gayle: 'Viola',
+//   Brandon: 'Bass',
+//   Mark: 'Timponi',
+//   Alberto: 'Bongo',
+//   Jacob: 'Snare Drum',
+//   David: 'Drums'
+// }
+
+// This returns an array
+// const instruments = [];
+
+// for (let i = 0; i < band.length; i++) {
+//     const currentObj = band[i];
+
+//     for (const key in currentObj) {
+//         if (key !== Object.keys(currentObj)[0]) {
+//             instruments.push(currentObj[key]);
+//         }
+//     }
+// }
+
+// console.log(instruments)
+
+// const courses = {
+//     firstCourse: 'JavaScript',
+//     secondCourse: 'React',
+//     thirdCourse: 'Angular'
+// };
+// let value = '';
+ 
+// //using for in loop
+// for (let item in courses) {
+//     value += courses[item] + " ";
+// }
+// console.log(value);
+let music = { 1: 1};
+
+
+const notes = ["C", "D", "E"];
+const musicArr = ["Piano", "Guitar", "Flute"];
+
+
+for (let i = 0; i < notes.length; i++) {
+    const note = notes[i];
+    const instrument = musicArr[i];
+    music[note] = instrument;
+}
+
+
+console.log(music);
